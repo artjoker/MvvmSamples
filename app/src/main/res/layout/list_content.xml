@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="ua.artjoker.mvvmsamples.viewmodels.bases.ListViewModel" />
+
+        <variable
+            name="viewModel"
+            type="ua.artjoker.mvvmsamples.viewmodels.bases.ListViewModel" />
+
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/Wide"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            style="@style/Fill"
+            app:refreshing="@={viewModel.refreshing}">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                style="@style/Fill"
+                app:adapter="@{viewModel.recyclerViewAdapter}"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <TextView
+            style="@style/Wrapped"
+            android:layout_gravity="center"
+            android:text="@{viewModel.emptyListText, default=@string/empty_list}"
+            android:textColor="@color/darker_gray"
+            android:visibility="@{viewModel.emptyMessageVisible}" />
+
+    </FrameLayout>
+
+</layout>

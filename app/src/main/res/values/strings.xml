@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">MvvmSamples</string>
+    <string name="sending">Sending…</string>
+    <string name="authorization_successful">Authorization successful</string>
+    <string name="empty_list">No items…</string>
+
+    <!--Errors-->
+    <string name="error_field_required">Required field</string>
+    <string name="error_field_required_short">Req. field</string>
+    <string name="error_invalid_password">Enter a password of 6 characters</string>
+    <string name="error_incorrect_password">Wrong password</string>
+    <string name="error_wrong_email">Wrong email</string>
+    <string name="error_incorrect_email">Incorrect email</string>
+
+
+    <!--Hints-->
+    <string name="hint_optional">(optional)</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+
+    <!--MainActivity-->
+    <string name="auth">Authorization</string>
+    <string name="sign_in">Sign In</string>
+    <string name="refreshable_list">Refreshable List</string>
+
+</resources>

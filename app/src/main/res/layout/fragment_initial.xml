@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="ua.artjoker.mvvmsamples.ui.fragments.InitialFragment" />
+
+
+        <variable
+            name="viewModel"
+            type="InitialFragment" />
+
+    </data>
+
+    <LinearLayout
+        style="@style/Fill"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_middle">
+
+        <Button
+            android:id="@+id/login"
+            style="@style/Wide"
+            android:onClick="@{() -> viewModel.goToAuth()}"
+            android:text="@string/auth" />
+
+        <Button
+            android:id="@+id/refreshable_list"
+            style="@style/Wide"
+            android:onClick="@{() -> viewModel.goToRefreshableList()}"
+            android:text="@string/refreshable_list" />
+
+    </LinearLayout>
+
+</layout>

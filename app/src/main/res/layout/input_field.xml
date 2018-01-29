@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="ua.artjoker.mvvmsamples.viewmodels.bases.FieldViewModel" />
+
+        <import type="android.graphics.drawable.Drawable" />
+
+
+        <variable
+            name="viewModel"
+            type="FieldViewModel" />
+
+        <variable
+            name="drawableStart"
+            type="Drawable" />
+
+    </data>
+
+    <android.support.design.widget.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/Wide"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/screen_horizontal_margin"
+        android:layout_marginStart="@dimen/screen_horizontal_margin"
+        app:error="@{viewModel.error}"
+        app:errorEnabled="true"
+        app:hintEnabled="true"
+        app:hintId="@{viewModel.hint}"
+        app:inputType="@{viewModel.inputType}"
+        app:optional="@{viewModel.optional}"
+        app:passwordToggleEnabled="@{true}"
+        tools:hint="@string/hint_email">
+
+        <android.support.design.widget.TextInputEditText
+            style="@style/Wide"
+            android:drawablePadding="@dimen/margin_tiny"
+            android:drawableStart="@{drawableStart}"
+            android:enabled="@{viewModel.enabled}"
+            android:gravity="top"
+            android:maxLength="@{viewModel.maxLength}"
+            android:text="@={viewModel.input}"
+            app:focused="@={viewModel.focused}"
+            app:maxLines="@{viewModel.maxLines}"
+            app:minLines="@{viewModel.minLines}" />
+
+    </android.support.design.widget.TextInputLayout>
+
+</layout>

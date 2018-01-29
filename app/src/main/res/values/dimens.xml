@@ -1,0 +1,12 @@
+<resources>
+
+    <dimen name="screen_horizontal_margin">16dp</dimen>
+
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_middle">16dp</dimen>
+    <dimen name="margin_short">8dp</dimen>
+    <dimen name="margin_tiny">4dp</dimen>
+
+    <dimen name="profile_image_size">56dp</dimen>
+
+</resources>

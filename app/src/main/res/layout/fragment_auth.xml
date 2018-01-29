@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="ua.artjoker.mvvmsamples.viewmodels.AuthViewModel" />
+
+
+        <variable
+            name="viewModel"
+            type="AuthViewModel" />
+
+    </data>
+
+    <FrameLayout style="@style/Fill">
+
+        <LinearLayout
+            style="@style/Fill"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/input_field"
+                app:viewModel="@{viewModel.email}" />
+
+            <include
+                layout="@layout/input_field"
+                app:viewModel="@{viewModel.password}" />
+
+            <Button
+                style="@style/Wrapped"
+                android:onClick="@{() -> viewModel.attemptToSend()}"
+                android:text="@string/sign_in" />
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/progress_indicator"
+            app:visible="@{viewModel.loading}"
+            tools:visibility="gone" />
+
+    </FrameLayout>
+
+</layout>
